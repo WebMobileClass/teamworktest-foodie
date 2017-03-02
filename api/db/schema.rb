@@ -10,24 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225134937) do
-
-  create_table "drinks", force: :cascade do |t|
-    t.text     "image_url"
-    t.string   "name"
-    t.integer  "price"
-    t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170227123216) do
 
   create_table "foods", force: :cascade do |t|
-    t.text     "image_url"
-    t.string   "name"
-    t.integer  "price"
-    t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                                null: false
+    t.string   "food_type",                           null: false
+    t.decimal  "price",       precision: 5, scale: 2, null: false
+    t.string   "vendor_name",                         null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "customer_id",                         null: false
+    t.integer  "food_id",                             null: false
+    t.integer  "quantity",                            null: false
+    t.decimal  "total",       precision: 5, scale: 2, null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  create_table "registers", force: :cascade do |t|
+    t.string   "username",     null: false
+    t.string   "first_name",   null: false
+    t.string   "last_name",    null: false
+    t.string   "email",        null: false
+    t.text     "address",      null: false
+    t.string   "phone_number", null: false
+    t.string   "password",     null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

@@ -8,45 +8,24 @@
 
 foods = Food.create([
 	{
-		image_url: './', name: 'Amala', price: '600.00', quantity: '4'
+		name: 'Amala', type: 'meal', price: '600.00', vendor_name: 'Fzba'
 	},
 	{
-		image_url: './', name: 'Rice', price: '500.00', quantity: '1'
+		name: 'Chivita', type: 'drink', price: '500.00', vendor_name: 'Fzba'
 	},
 	{
-		image_url: './', name: 'Fufu', price: '600.00', quantity: '4'
+		name: 'Fufu', type: 'meal', price: '600.00', vendor_name: 'Bashan'
 	},
 	{
-		image_url: './', name: 'Semo', price: '450.00', quantity: '3'
+		name: 'Ice Tea', type: 'drink', price: '300.00', vendor_name: 'Bashan'
 	},
 	{
-		image_url: './', name: 'Beans', price: '300.00', quantity: '1'
+		name: 'Holandia', type: 'drink', price: '300.00', vendor_name: 'Fzba'
 	},
 	{
-		image_url: './', name: 'Wheat', price: '300.00', quantity: '2'
+		name: 'Wheat', type: 'meal', price: '300.00', vendor_name: 'Bashan'
 	},
 	{
-		image_url: './', name: 'Spaghetti', price: '300.00', quantity: '1'
-	}
-])
-
-drinks = Drink.create([
-	{
-		image_url: './', name: 'Five Alive', price: '600.00', quantity: '1'
-	},
-	{
-		image_url: './', name: 'Ribenna', price: '500.00', quantity: '1'
-	},
-	{
-		image_url: './', name: 'Chivita', price: '600.00', quantity: '1'
-	},
-	{
-		image_url: './', name: 'Graty', price: '450.00', quantity: '3'
-	},
-	{
-		image_url: './', name: 'Hollianda', price: '300.00', quantity: '1'
-	},
-	{
-		image_url: './', name: 'Ice Tea', price: '300.00', quantity: '1'
+		name: 'Spaghetti', type: 'meal', price: '300.00', vendor_name: 'Bashan'
 	}
 ])

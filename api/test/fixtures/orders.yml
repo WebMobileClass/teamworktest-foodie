@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  food_id: 1
+  quantity: MyString
+  integer: MyString
+  total: MyString
+  integer: MyString
+
+two:
+  id: 1
+  food_id: 1
+  quantity: MyString
+  integer: MyString
+  total: MyString
+  integer: MyString
