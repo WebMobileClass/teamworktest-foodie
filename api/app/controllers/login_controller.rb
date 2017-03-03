@@ -1,15 +1,15 @@
 class LoginController < ApplicationController
-	def login
+	def create
 		#loginParams is meant to collect data from users then perform check
 		@email = params[:email]
 		@password = params[:password]
 
-		@loginParams = Register.where("email = ? AND password = ?", @email, @password)
+		@queryParams = Register.where("email = ? AND password = ?", @email, @password)
+		render json: @queryParams
+	end
 
-		if @loginParams
-			render json: {"message": "Login Successful"}
-		else
-			render json: @loginParams.errors, status: :unprocessable_entity
-		end
+	private 
+	def loginParams
+		params.require(:register).permit(:username, :first_name, :last_name, :email, :address, :phone_number)
 	end
 end

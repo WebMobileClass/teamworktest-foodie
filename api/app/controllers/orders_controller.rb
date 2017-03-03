@@ -1,14 +1,11 @@
 class OrdersController < ApplicationController
 	def create
-		@order = Order.create(order_params)
-
-		#@price 
-
+		@order = Order.create(:order)
 
 		if @order.save
 			render status: :created
 		else
-			render json @order.errors, status: :unprocessable_entity
+			render json: @order.errors, status: :unprocessable_entity
 		end
 
 		private
