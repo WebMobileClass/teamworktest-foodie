@@ -1,12 +1,14 @@
 class OrdersController < ApplicationController
 	#include ActiveModel::Conversion
   	#attr_accessor :total
+  	def index
+  		@orders = Order.all
+  		render json: @orders, status: :ok
+  	end
 	def create
 		price = params[:price]
 		quantity = params[:quantity]
-		totalPrice  price * quantity 
-		
-		params[:total] = totalPrice
+		params[:total]= price.to_i * quantity.to_i
 
 		@order = Order.create(order_params)
 
@@ -18,7 +20,8 @@ class OrdersController < ApplicationController
 	end
 
 	def show
-		@orders = Food.joins(:orders)
+		order_id = params[:id]
+		@orders = Food.joins(:orders).where( orders: { id: order_id})
 		render json: @orders
 		#.where(orders: { created_at: time_range })
 		

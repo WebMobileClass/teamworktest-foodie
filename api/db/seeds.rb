@@ -6,26 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-foods = Food.create([
-	{
-		name: 'Amala', type: 'meal', price: '600.00', vendor_name: 'Fzba'
-	},
-	{
-		name: 'Chivita', type: 'drink', price: '500.00', vendor_name: 'Fzba'
-	},
-	{
-		name: 'Fufu', type: 'meal', price: '600.00', vendor_name: 'Bashan'
-	},
-	{
-		name: 'Ice Tea', type: 'drink', price: '300.00', vendor_name: 'Bashan'
-	},
-	{
-		name: 'Holandia', type: 'drink', price: '300.00', vendor_name: 'Fzba'
-	},
-	{
-		name: 'Wheat', type: 'meal', price: '300.00', vendor_name: 'Bashan'
-	},
-	{
-		name: 'Spaghetti', type: 'meal', price: '300.00', vendor_name: 'Bashan'
-	}
+order = Order.create([{
+	customer_id: 1,
+	food_id: 1,
+	total: 1800,
+	quantity: 3
+},
+	customer_id: 1,
+	food_id: 2,
+	total: 700,
+	quantity: 2
 ])
