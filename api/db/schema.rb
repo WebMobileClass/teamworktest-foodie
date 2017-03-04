@@ -13,21 +13,21 @@
 ActiveRecord::Schema.define(version: 20170227123216) do
 
   create_table "foods", force: :cascade do |t|
-    t.string   "name",                                null: false
-    t.string   "food_type",                           null: false
-    t.decimal  "price",       precision: 5, scale: 2, null: false
-    t.string   "vendor_name",                         null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "name",        null: false
+    t.string   "food_type",   null: false
+    t.integer  "price",       null: false
+    t.string   "vendor_name", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "customer_id",                         null: false
-    t.integer  "food_id",                             null: false
-    t.integer  "quantity",                            null: false
-    t.decimal  "total",       precision: 5, scale: 2, null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.integer  "customer_id", null: false
+    t.integer  "food_id",     null: false
+    t.integer  "quantity",    null: false
+    t.integer  "total",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "registers", force: :cascade do |t|

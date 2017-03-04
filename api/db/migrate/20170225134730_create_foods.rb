@@ -3,7 +3,7 @@ class CreateFoods < ActiveRecord::Migration[5.0]
     create_table :foods do |t|
       t.string :name, null: false
       t.string :food_type, null: false
-      t.decimal :price, null: false, precision: 5, scale: 2
+      t.integer :price, null: false
       t.string :vendor_name, null: false
 
       t.timestamps
