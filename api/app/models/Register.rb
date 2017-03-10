@@ -1,5 +1,5 @@
 class Register < ApplicationRecord
-
+	has_secure_password
 	validates :username, :first_name, :last_name, :email, :address, :password, :phone_number, presence: true
 
 	before_create :downcase_params, on: :create
