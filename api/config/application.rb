@@ -29,7 +29,7 @@ module Api
 
     config.autoload_paths << Rails.root.join('lib')
 
-    before_action :authenticate_request
+    #before_action :authenticate_request
     attr_reader :current_user
 
     private

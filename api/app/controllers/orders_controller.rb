@@ -5,15 +5,20 @@ class OrdersController < ApplicationController
   		@orders = Order.all
   		render json: @orders, status: :ok
   	end
-	def create
-		price = params[:price]
-		quantity = params[:quantity]
-		params[:total]= price.to_i * quantity.to_i
 
-		@order = Order.create(order_params)
+	def create
+		customer_id = params[:customer_id]
+		food_id = params[:food_id]
+		quantity = params[:quantity]
+
+		food_price = Food.find_by_id(food_id)
+		price = food_price.price
+		total = quantity * price
+
+		@order = Order.create(customer_id: customer_id, food_id: food_id, quantity: quantity, total: total)
 
 		if @order.save
-			render status: :created
+			render status: :created                   
 		else
 			render json: @order.errors, status: :unprocessable_entity
 		end
